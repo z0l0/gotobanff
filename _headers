@@ -1,0 +1,7 @@
+/images/hero-banff-og.jpg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=31536000
+
+/images/*
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=31536000
