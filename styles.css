@@ -21,6 +21,7 @@ body {
     color: var(--color-text);
     line-height: 1.6;
 }
+a { color: var(--color-primary); }
 
 /* Navigation */
 .nav {
@@ -52,7 +53,9 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     list-style: none;
 }
 .nav-links a {
@@ -155,6 +158,165 @@ section { padding: 5rem 2rem; }
     font-size: 1.5rem;
 }
 .answer-card p { margin-bottom: 0.5rem; }
+
+.updated-note {
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    background: #eef6ff;
+    color: #174a73;
+    border: 1px solid #c9e4ff;
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.source-note {
+    background: #f8fbf6;
+    border: 1px solid #dcebd2;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.source-note strong { color: var(--color-primary); }
+
+.fact-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.fact-card {
+    background: var(--color-card);
+    border-radius: 12px;
+    padding: 1rem;
+    border-top: 3px solid var(--color-primary);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.fact-card strong {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+
+.decision-grid,
+.guide-grid,
+.checklist-grid,
+.itinerary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.decision-card,
+.guide-card,
+.checklist-card,
+.itinerary-card {
+    background: var(--color-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+.decision-card h3,
+.guide-card h3,
+.checklist-card h3,
+.itinerary-card h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: 1.35rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.decision-card ul,
+.guide-card ul,
+.checklist-card ul,
+.itinerary-card ul {
+    margin: 0.75rem 0 0 1.15rem;
+}
+
+.decision-card li,
+.guide-card li,
+.checklist-card li,
+.itinerary-card li {
+    margin-bottom: 0.35rem;
+}
+
+.mini-label {
+    display: inline-block;
+    background: #f0f7e6;
+    color: var(--color-primary);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.source-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.source-list a {
+    background: var(--color-card);
+    border: 1px solid #e5eadf;
+    border-radius: 12px;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--color-text);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.source-list strong {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: 0.35rem;
+}
+
+.source-list span {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+}
+
+.callout-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.action-list {
+    background: var(--color-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.action-list h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.action-list ol,
+.action-list ul {
+    margin-left: 1.25rem;
+}
+
+.action-list li {
+    margin-bottom: 0.5rem;
+}
 
 /* Season Deep Dive */
 .season-deep-dive {
@@ -670,6 +832,7 @@ footer a { color: var(--color-accent); text-decoration: none; }
     }
     .season-deep-dive.reverse .season-image { order: 0; }
     .pros-cons { grid-template-columns: 1fr; }
+    .callout-row { grid-template-columns: 1fr; }
     .transport-table { font-size: 0.85rem; }
     .transport-table th, .transport-table td { padding: 0.75rem 0.5rem; }
     .cta-buttons { flex-direction: column; align-items: center; }
