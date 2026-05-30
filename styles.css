@@ -961,3 +961,665 @@ footer a { color: var(--color-accent); text-decoration: none; }
 }
 .free-day-card p { font-size: 0.9rem; color: var(--color-text-muted); }
 .free-day-card.special p { color: var(--color-text); }
+
+/* 2026 visual system refresh */
+:root {
+    --color-primary: #183f32;
+    --color-secondary: #2f6b57;
+    --color-accent: #d99a3a;
+    --color-accent-2: #3a8fb7;
+    --color-bg: #f7f8f5;
+    --color-card: #ffffff;
+    --color-text: #17231f;
+    --color-text-muted: #5f6f69;
+    --color-line: #dfe7e1;
+    --color-soft: #eef4f1;
+    --color-warning: #b94a3f;
+    --shadow-sm: 0 1px 2px rgba(23, 35, 31, 0.06);
+    --shadow-md: 0 10px 28px rgba(23, 35, 31, 0.09);
+    --shadow-lg: 0 24px 60px rgba(23, 35, 31, 0.16);
+    --radius: 8px;
+    --font-heading: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-padding-top: 86px;
+}
+
+body {
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.72), rgba(247,248,245,0.98) 22rem),
+        var(--color-bg);
+    color: var(--color-text);
+    font-size: 17px;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #175f83;
+    text-underline-offset: 0.18em;
+}
+
+.nav {
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid rgba(223, 231, 225, 0.9);
+    box-shadow: var(--shadow-sm);
+    padding: 0.78rem clamp(1rem, 3vw, 2rem);
+}
+
+.nav-container {
+    max-width: 1240px;
+    gap: 1rem;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.22rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: var(--color-text);
+}
+
+.logo span {
+    color: var(--color-secondary);
+}
+
+.nav-links {
+    gap: 0.35rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #283832;
+    border-radius: 999px;
+    padding: 0.44rem 0.72rem;
+    font-size: 0.94rem;
+    line-height: 1;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: var(--color-soft);
+    color: var(--color-primary);
+}
+
+.mobile-menu-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-line);
+    background: #fff;
+    color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+    font-size: 0;
+    position: relative;
+}
+
+.mobile-menu-btn::before,
+.mobile-menu-btn::after {
+    content: '';
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 999px;
+}
+
+.mobile-menu-btn::before {
+    top: 16px;
+    box-shadow: 0 6px 0 var(--color-primary);
+}
+
+.mobile-menu-btn::after {
+    top: 28px;
+}
+
+section {
+    padding: clamp(3rem, 7vw, 5.75rem) clamp(1.1rem, 4vw, 2rem);
+}
+
+.container {
+    max-width: 1120px;
+}
+
+.section-header {
+    max-width: 760px;
+    margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 4vw, 2.65rem);
+    font-weight: 900;
+    color: var(--color-text);
+    letter-spacing: 0;
+    line-height: 1.05;
+}
+
+.section-header p {
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 2vw, 1.12rem);
+    max-width: 680px;
+    margin: 0.45rem auto 0;
+}
+
+.hero {
+    min-height: 74svh;
+    display: grid;
+    align-items: end;
+    position: relative;
+    isolation: isolate;
+    padding: 8rem clamp(1.25rem, 5vw, 4rem) 5rem;
+    background:
+        linear-gradient(180deg, rgba(9, 24, 20, 0.16), rgba(9, 24, 20, 0.72)),
+        url('images/hero-banff-landscape.jpg') center/cover no-repeat;
+    color: #fff;
+}
+
+.hero-content {
+    width: min(880px, 100%);
+    margin: 0 auto;
+    text-align: left;
+}
+
+.hero h1,
+.page-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.45rem, 8vw, 5.8rem);
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: 0;
+    margin-bottom: 1rem;
+    text-wrap: balance;
+}
+
+.hero-tagline,
+.page-hero p {
+    font-size: clamp(1.08rem, 2vw, 1.34rem);
+    line-height: 1.45;
+    max-width: 760px;
+    opacity: 0.96;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.6rem;
+}
+
+.scroll-indicator {
+    display: none;
+}
+
+.page-hero {
+    min-height: clamp(360px, 48vh, 520px);
+    align-items: end;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 8rem clamp(1.25rem, 5vw, 4rem) 4rem;
+}
+
+.page-hero::before {
+    background:
+        linear-gradient(90deg, rgba(9, 24, 20, 0.78), rgba(9, 24, 20, 0.42) 58%, rgba(9, 24, 20, 0.18)),
+        linear-gradient(180deg, rgba(9, 24, 20, 0.08), rgba(9, 24, 20, 0.62));
+}
+
+.page-hero-content {
+    max-width: 860px;
+    margin: 0 auto;
+    width: min(1120px, 100%);
+}
+
+.btn {
+    border-radius: var(--radius);
+    padding: 0.82rem 1.12rem;
+    font-weight: 850;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+    background: var(--color-accent);
+    color: #1f211b;
+}
+
+.btn-primary:hover {
+    background: #c98728;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.12);
+    color: inherit;
+    border: 1px solid currentColor;
+}
+
+.quick-answer {
+    background: #fff;
+}
+
+.answer-card {
+    max-width: 900px;
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-left: 5px solid var(--color-secondary);
+    border-radius: var(--radius);
+    padding: clamp(1.15rem, 4vw, 2rem);
+    box-shadow: var(--shadow-md);
+}
+
+.answer-card h2 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    font-size: 1.03rem;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+.answer-card p {
+    margin-bottom: 0.78rem;
+}
+
+.updated-note,
+.mini-label,
+.month-rating,
+.recommended-badge,
+.summer-badge,
+.avoid-badge,
+.luxury-badge,
+.best-value {
+    border-radius: 999px;
+    letter-spacing: 0;
+}
+
+.updated-note {
+    background: #eef6f8;
+    color: #19516a;
+    border-color: #cddfe6;
+}
+
+.quick-links,
+.guide-grid,
+.decision-grid,
+.checklist-grid,
+.itinerary-grid,
+.packing-grid,
+.weather-seasons,
+.hazard-grid,
+.source-list,
+.resource-grid,
+.local-transport-grid,
+.essentials-grid,
+.buy-options,
+.free-days-grid {
+    gap: clamp(0.85rem, 2.4vw, 1.35rem);
+}
+
+.quick-links,
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.quick-link-card,
+.decision-card,
+.guide-card,
+.checklist-card,
+.itinerary-card,
+.hazard-card,
+.weather-season-card,
+.resource-card,
+.local-transport-card,
+.packing-category,
+.essential-item,
+.buy-option,
+.free-day-card,
+.action-list,
+.faq-item,
+.source-list a,
+.pass-card,
+.month-card,
+.shuttle-card,
+.cost-breakdown,
+.pros,
+.cons {
+    border-radius: var(--radius);
+    border: 1px solid var(--color-line);
+    box-shadow: var(--shadow-sm);
+}
+
+.quick-link-card,
+.resource-card {
+    display: block;
+    background: #fff;
+    color: var(--color-text);
+    padding: clamp(1rem, 2.5vw, 1.35rem);
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.quick-link-card:hover,
+.resource-card:hover,
+.source-list a:hover {
+    transform: translateY(-2px);
+    border-color: #b7cbc2;
+    box-shadow: var(--shadow-md);
+}
+
+.quick-link-icon,
+.hazard-icon,
+.essential-icon,
+.buy-icon,
+.free-icon {
+    display: none;
+}
+
+.quick-link-card h3,
+.decision-card h3,
+.guide-card h3,
+.checklist-card h3,
+.itinerary-card h3,
+.packing-category h4,
+.resource-card h4,
+.local-transport-card h4,
+.month-card h4,
+.weather-season-card h3,
+.hazard-card h3,
+.action-list h3,
+.transport-header h3,
+.pass-header h3,
+.buy-option h4,
+.free-day-card h4 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    font-size: clamp(1.08rem, 2vw, 1.28rem);
+    font-weight: 850;
+    letter-spacing: 0;
+    line-height: 1.18;
+}
+
+.quick-link-card p,
+.decision-card p,
+.guide-card p,
+.checklist-card p,
+.itinerary-card p,
+.resource-card p,
+.local-transport-card p,
+.source-list span,
+.faq-item p {
+    color: var(--color-text-muted);
+}
+
+.decision-card,
+.guide-card,
+.checklist-card,
+.itinerary-card,
+.hazard-card,
+.weather-season-card,
+.packing-category,
+.essential-item,
+.buy-option,
+.free-day-card,
+.action-list {
+    padding: clamp(1rem, 2.8vw, 1.45rem);
+}
+
+.mini-label {
+    background: var(--color-soft);
+    color: var(--color-secondary);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+}
+
+.source-note,
+.pro-tip,
+.warning-card,
+.hazard-tip,
+.weather-tip,
+.pass-best-for {
+    border-radius: var(--radius);
+    border: 1px solid var(--color-line);
+    background: var(--color-soft);
+}
+
+.warning-card {
+    background: #fff3f1;
+    border-left: 5px solid var(--color-warning);
+}
+
+.table-wrapper {
+    border-radius: var(--radius);
+    border: 1px solid var(--color-line);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.transport-table {
+    min-width: 760px;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.98rem;
+}
+
+.transport-table th,
+.transport-table td {
+    padding: 0.92rem 1rem;
+    vertical-align: top;
+}
+
+.transport-table th {
+    background: #173b31;
+    font-family: var(--font-heading);
+    font-weight: 850;
+    letter-spacing: 0;
+}
+
+.transport-table tr.recommended {
+    background: #edf6f1;
+}
+
+.transport-table tr:hover {
+    background: #f6faf8;
+}
+
+.faq-list {
+    max-width: 900px;
+}
+
+.faq-item {
+    padding: 1.15rem 1.25rem;
+}
+
+.faq-item h4 {
+    color: var(--color-text);
+    font-size: 1.05rem;
+    line-height: 1.25;
+}
+
+.season-card {
+    background: #fff;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-line);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.seasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+}
+
+.season-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+}
+
+.season-card-content {
+    padding: 1.1rem;
+}
+
+.season-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 850;
+    letter-spacing: 0;
+    color: var(--color-text);
+}
+
+footer {
+    background: #122c25;
+    padding: 2.4rem 1.25rem;
+}
+
+.footer-links {
+    gap: 0.55rem;
+}
+
+.footer-links a {
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 999px;
+    padding: 0.42rem 0.7rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+    body {
+        font-size: 16px;
+    }
+
+    .nav {
+        padding: 0.62rem 0.85rem;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 68px;
+        left: 0.85rem;
+        right: 0.85rem;
+        max-height: calc(100svh - 86px);
+        overflow: auto;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        padding: 0.6rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.45rem;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .nav-links.active {
+        display: grid;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.82rem 0.75rem;
+        background: var(--color-bg);
+    }
+
+    .mobile-menu-btn {
+        display: inline-grid;
+        place-items: center;
+    }
+
+    .hero {
+        min-height: 78svh;
+        padding: 7rem 1.1rem 3rem;
+    }
+
+    .page-hero {
+        min-height: 340px;
+        padding: 6.2rem 1.1rem 2rem;
+    }
+
+    .hero h1,
+    .page-hero h1 {
+        font-size: clamp(2.3rem, 13vw, 3.7rem);
+    }
+
+    .hero-cta,
+    .cta-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: none;
+        text-align: center;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    .quick-links,
+    .guide-grid,
+    .decision-grid,
+    .checklist-grid,
+    .itinerary-grid,
+    .hazard-grid,
+    .weather-seasons,
+    .packing-grid,
+    .source-list,
+    .resource-grid,
+    .local-transport-grid,
+    .essentials-grid,
+    .buy-options,
+    .free-days-grid,
+    .pass-comparison,
+    .shuttle-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .table-wrapper {
+        margin-left: -0.25rem;
+        margin-right: -0.25rem;
+    }
+
+    .transport-table {
+        min-width: 680px;
+        font-size: 0.9rem;
+    }
+
+    .transport-table th,
+    .transport-table td {
+        padding: 0.72rem;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+
+@media (max-width: 430px) {
+    .nav-links {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .answer-card,
+    .quick-link-card,
+    .decision-card,
+    .guide-card,
+    .checklist-card,
+    .itinerary-card,
+    .faq-item {
+        padding: 1rem;
+    }
+}
